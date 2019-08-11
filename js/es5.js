@@ -65,7 +65,7 @@ function Hamburger(size, stuffing) {
             throw new HamburgerException(`invalid stuffing ${stuffing}`);
         }
 
-        this.stuffing = [stuffing];
+        this.stuffing = stuffing;
 
         this.topping = [];
 
@@ -253,4 +253,3 @@ let h3 = new Hamburger(Hamburger.TOPPING_SPICE, Hamburger.TOPPING_SPICE);
 let h4 = new Hamburger(Hamburger.SIZE_SMALL, Hamburger.STUFFING_CHEESE);
 hamburger.addTopping(Hamburger.TOPPING_MAYO);
 // HamburgerException: duplicate topping 'TOPPING_MAYO'
-
