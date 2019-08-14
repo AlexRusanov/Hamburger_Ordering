@@ -216,23 +216,23 @@ console.log(`маленький гамбургер с начинкой из сы
 console.log("Price with spice: %f", hamburger.calculatePrice());
 
 // Проверить, большой ли гамбургер?
-console.log("Is hamburger large: %s", hamburger.getSize() === Hamburger.SIZE_LARGE); // -> false
+console.log("Is hamburger large: %s", hamburger.getSize() === Hamburger.SIZES[1].value); // -> false
 
 // Убрать добавку
-hamburger.removeTopping(Hamburger.TOPPING_SPICE);
-console.log(`you removed ${Hamburger.TOPPING_SPICE}`);
+hamburger.removeTopping(Hamburger.TOPPING[1].value);
+console.log(`you removed ${Hamburger.TOPPING[1].value}`);
 console.log("Hamburger have %d toppings", hamburger.getToppings().length); // 1
 
-hamburger.removeTopping(Hamburger.TOPPING_SPICE);
+hamburger.removeTopping(Hamburger.TOPPING[1].value);
 
 // не передали обязательные параметры
 let h2 = new Hamburger(); // => HamburgerException: no size given
 
 // передаем некорректные значения, добавку вместо размера
-let h3 = new Hamburger(Hamburger.TOPPING_SPICE, Hamburger.TOPPING_SPICE);
+let h3 = new Hamburger(Hamburger.TOPPING[1].value, Hamburger.TOPPING[1].value);
 // => HamburgerException: invalid size 'TOPPING_SAUCE'
 
 // добавляем много добавок
-let h4 = new Hamburger(Hamburger.SIZE_SMALL, Hamburger.STUFFING_CHEESE);
-hamburger.addTopping(Hamburger.TOPPING_MAYO);
+let h4 = new Hamburger(Hamburger.SIZES[0].value, Hamburger.STUFFING[0].value);
+hamburger.addTopping(Hamburger.TOPPING[0].value);
 // HamburgerException: duplicate topping 'TOPPING_MAYO'
